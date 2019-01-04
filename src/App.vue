@@ -39,6 +39,6 @@
 	#app{
 		padding-top: 40px;
 		padding-bottom: 50px;
-		background-color: #fff;
+		// background-color: #fff;
 	}
 </style>

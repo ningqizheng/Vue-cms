@@ -7,7 +7,7 @@
         </p>
         <hr>
         <div v-html='newsInfo.content'></div>
-        <!-- 导入子评论组件 -->
+        <!-- 导入子评论组件 父组件自定义id属性向子组件传值 -->
         <comments :id='this.id'></comments>
     </div>
 </template>
@@ -28,7 +28,7 @@ export default {
         getnewsInfo(){
             // console.log(this.id)
             this.$http.get('api/getnew/'+this.id).then(res=>{
-                console.log(res.body)
+                // console.log(res.body)
                 if(res.body.status==0){
                     //message[0]就是当前资讯详情,是一个对象
                     this.newsInfo=res.body.message[0]
