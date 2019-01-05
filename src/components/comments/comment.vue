@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-
+import {Toast} from "mint-ui";
 
 export default {
   data() {
@@ -39,27 +39,36 @@ export default {
     },
     addcomment(){
       // 在提交评论之前先判断,如果评论内容为空,就不让它执行下面的代码,不发联网请求
-      if(this.msg.length==0){
+      if(this.msg.length===0){
         Toast('没写你也想提交,四不四傻?')
         return
       }
       this.$http.post('api/postcomment/'+this.id,{content:this.msg.trim()}).then(res=>{
         // console.log(res)
         if(res.body.status==0){
-          // 自定义一个评论对象插入到comments数组里面
-          let mycomment = {
-            'add_time' : new Date(),
-            'content':this.msg,
-            'user_name':'匿名用户'
 
-          }
-          this.comments.unshift(mycomment)
+          //第一种思路:自定义一个评论对象插入到comments数组里面
+
+          // let mycomment = {
+          //   'add_time' : new Date(),
+          //   'content':this.msg,
+          //   'user_name':'匿名用户'
+
+          // }
+          // this.comments.unshift(mycomment)
+
+
+          //第二种思路,先将页面加载出来调用getComments()已有数据清空,再强行将页码改为1,
+          //此时后台数据已经添加完成,再调用getComments()方法渲染出来的的就是最新的数据了
+          this.comments = []
+          this.pageindex = 1
+          this.getComments()
           this.msg=''
         }
       })
     },
     getmore(){
-      console.log(111)
+      // console.log(111)
       this.pageindex++
       this.getComments()
 

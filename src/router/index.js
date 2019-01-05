@@ -9,6 +9,8 @@ import ShopcarContainer from '../components/tabbar/ShopcarContainer.vue'
 import SearchContainer from '../components/tabbar/SearchContainer.vue'
 import newsLists from '../components/news/newsLists.vue'
 import newsInfo from '../components/news/newsInfo.vue'
+import photoList from '../components/photoLists/photoList.vue'
+import photoInfo from '../components/photoLists/photoInfo.vue'
 
 
 
@@ -20,8 +22,12 @@ var router = new VueRouter({
       { path: '/shopcar', component: ShopcarContainer },
       { path: '/search', component: SearchContainer },
       {path:'/home/newsLists',component:newsLists},
-      //配置获取图文资讯详情的时候要传参:id
-      {path:'/home/newsInfo/:id',component:newsInfo}
+      //配置获取新闻资讯详情的时候要传参:id
+      {path:'/home/newsInfo/:id',component:newsInfo},
+      {path:'/home/photoList',component:photoList},
+      //获取图片资讯详情的时候一定要在路由规则中定义参数
+      {path:'/home/photoInfo:id',component:photoInfo},
+
       
     ],
     linkActiveClass: 'mui-active' // 覆盖默认的路由高亮的类，默认的类叫做 router-link-active
