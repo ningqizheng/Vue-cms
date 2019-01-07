@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='photoList-container'>
     <!-- 头部导航区域 -->
     <div
       class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted"
@@ -65,7 +65,8 @@ export default {
 };
 </script>
 <style lang='less'>
-ul {
+.photoList-container{
+  ul {
   padding: 0 10px;
   list-style: none;
   li {
@@ -92,5 +93,7 @@ ul {
     }
   }
 }
+}
+
 </style>
 
