@@ -6,6 +6,7 @@
     >
       <div class="mui-scroll">
         <!-- <a class="mui-control-item mui-active" v-for='(item ,index) in categorys' :key='index'>{{item.title}}</a> -->
+        <!-- 自定义class类样式,通过对象的属性值的布尔值的方式判断是否给当前标签添加类样式 -->
         <a
           :class="{'mui-control-item':true,'mui-active':index==0}"
           v-for="(item ,index) in categorys"

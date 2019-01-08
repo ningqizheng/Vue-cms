@@ -11,6 +11,10 @@ import newsLists from '../components/news/newsLists.vue'
 import newsInfo from '../components/news/newsInfo.vue'
 import photoList from '../components/photoLists/photoList.vue'
 import photoInfo from '../components/photoLists/photoInfo.vue'
+import goodLists from '../components/goodLists/goodLists.vue'
+import goodInfo from '../components/goodLists/goodInfo.vue'
+
+
 
 
 
@@ -27,6 +31,10 @@ var router = new VueRouter({
       {path:'/home/photoList',component:photoList},
       //获取图片资讯详情的时候一定要在路由规则中定义参数
       {path:'/home/photoInfo:id',component:photoInfo},
+      {path:'/home/goodLists',component:goodLists},
+      {path:'/home/goodInfo:id',component:goodInfo},
+
+
 
       
     ],
