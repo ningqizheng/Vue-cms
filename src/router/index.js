@@ -13,6 +13,9 @@ import photoList from '../components/photoLists/photoList.vue'
 import photoInfo from '../components/photoLists/photoInfo.vue'
 import goodLists from '../components/goodLists/goodLists.vue'
 import goodInfo from '../components/goodLists/goodInfo.vue'
+import goodDescription from '../components/goodLists/goodDescription.vue'
+import goodComment from '../components/goodLists/goodComment.vue'
+
 
 
 
@@ -33,6 +36,10 @@ var router = new VueRouter({
       {path:'/home/photoInfo:id',component:photoInfo},
       {path:'/home/goodLists',component:goodLists},
       {path:'/home/goodInfo:id',component:goodInfo},
+      {path:'/home/goodDescription:id',component:goodDescription},
+      {path:'/home/goodComment:id',component:goodComment},
+
+
 
 
 

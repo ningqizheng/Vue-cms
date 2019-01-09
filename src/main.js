@@ -32,10 +32,27 @@ import moment from 'moment'
   })
 //------------------------------------------自定义请求根路径----------------------
 Vue.http.options.root = 'http://www.lovegf.cn:8899/';
+
+//---------------------Vuex------------------------------------
+import Vuex from 'vuex'
+Vue.use(Vuex)
+var store = new Vuex.Store({
+    state:{
+      name:'老赵'
+    },
+    mutations:{
+      changName(state){
+        state.name = '叫我打鬼'
+      } 
+    }
+})
+
+
 new Vue({
   el: '#app',
   //将路由挂载到Vue实例上,通过router-link和router-view展示不同的组件
   router,
   //代替#app渲染页面
-  render: h => h(App)
+  render: h => h(App),
+  store
 })

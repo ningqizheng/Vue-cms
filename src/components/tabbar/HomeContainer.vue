@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>{{$store.state.name}}</p>
       <!-- 轮播图区域 -->
     <mt-swipe :auto="4000">
       <!-- 在组件中，使用v-for循环的话，一定要使用 key -->
@@ -43,7 +44,7 @@
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
 								<a href="#">
-									<img src="../../images/menu6.png" alt="">
+									<img src="../../images/menu6.png" alt="" @click='changeName'>
 									<div class="mui-media-body">联系我们</div>
 								</a>
 							</li>
@@ -75,6 +76,9 @@ export default {
           Toast("加载轮播图失败。。。");
         }
       });
+    },
+    changeName(){
+      this.$store.commit('changName')
     }
   }
 };

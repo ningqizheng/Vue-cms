@@ -8,7 +8,7 @@
         <hr>
         <div v-html='newsInfo.content'></div>
         <!-- 导入子评论组件 父组件自定义id属性向子组件传值 -->
-        <comments :id='this.id'></comments>
+        <comments :id='id'></comments>
     </div>
 </template>
 <script>
